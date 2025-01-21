@@ -11,3 +11,7 @@ Mejoras
 -reiniciar filtros =>button
 -tooltip para habilitar el modo edición de tarea 
 -titulo ultimas 4 tareas en dashboard -hecho 
+-hacer que la cesion se cierre después de cierto tiempo 
+
+
+
