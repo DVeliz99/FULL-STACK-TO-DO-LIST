@@ -1,0 +1,13 @@
+Bugs: 
+-No carga nombre de usuario en el navbar solo cuando se le da recargar a la aplicación -corregido
+-Estado de tarea solo disponible en el formulario cuando se le da recargar a toda la aplicación -corregido
+-muestra mensaje de contraseña incorrecta cuando la autenticación es ejecutada con éxito -corregido
+-mostrar mensaje de éxito cuando se actualizo la tarea -corregido
+-Al intentar actualizar el estado de la tarea no muestra los estados disponibles de golpe-corregido
+-Si el estado de la tarea es completado que no la expire -corregido
+
+
+Mejoras 
+-reiniciar filtros =>button
+-tooltip para habilitar el modo edición de tarea 
+-titulo ultimas 4 tareas en dashboard -hecho 
