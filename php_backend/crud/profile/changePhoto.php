@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
-header('Content-Type: application/json'); // para asegurarse de que la respuesta sea JSON
+header('Content-Type: application/json'); // Asegúrate de que la respuesta sea JSON
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $row_avatar = mysqli_fetch_assoc($result_avatarPath);
             $avatar = $row_avatar['avatar'];
 
-            $pathtoDelete = __DIR__ . '/../' . $avatar; // para asegurarse de que la ruta completa sea correcta
+            $pathtoDelete = __DIR__ . '/../' . $avatar; // Asegúrate de que la ruta completa sea correcta
 
             if (file_exists($pathtoDelete)) {
                 if (unlink($pathtoDelete)) {
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $newavatarName = basename($newAvatar['name']); // Sanear el nombre del archivo
             $uploadFile = $uploadDir . $newavatarName; // Ruta completa del archivo
 
-            // para asegurarse de que el directorio de destino exista
+            // Asegúrate de que el directorio de destino exista
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0777, true); // Crear directorios si no existen
             }
