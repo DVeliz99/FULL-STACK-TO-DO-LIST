@@ -74,7 +74,7 @@ export class AppComponent implements OnInit, OnChanges, OnDestroy {
     });
 
     this.messageModalSubscription = this.messageModalService.currentMessage.subscribe(responseMessage => {
-      console.log('Mensaje para modal obtenida en app component',responseMessage);
+      // console.log('Mensaje para modal obtenida en app component',responseMessage);
       if (responseMessage) {
        if(responseMessage.type==='error'){
         this.showModalError(responseMessage.type,responseMessage.title,responseMessage.message);

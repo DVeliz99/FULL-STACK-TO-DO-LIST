@@ -416,9 +416,9 @@ export class FormTaskManagerComponent implements OnInit, AfterViewInit, OnDestro
                             message: this.successMessageCreate
                         };
                         this.messageModalService.changeMessage(this.modalMessage);
-                        console.log('newMessage enviado al MessageModalService en caso de exito desde form-stask-manager', this.modalMessage);
+                        // console.log('newMessage enviado al MessageModalService en caso de exito desde form-stask-manager', this.modalMessage);
                     } else if (response && response.status === 'error') {
-                        console.log('Response', response);
+                        // console.log('Response', response);
                         this.errorMessageCreate = response.message;
                         // this.showError(this.errorMessageCreate);
                         // Crear el objeto con los valores
@@ -428,7 +428,7 @@ export class FormTaskManagerComponent implements OnInit, AfterViewInit, OnDestro
                             message: this.errorMessageCreate
                         };
                         this.messageModalService.changeMessage(this.modalMessage);
-                        console.log('newMessage enviado al MessageModalService desde form-stask-manager');
+                        // console.log('newMessage enviado al MessageModalService desde form-stask-manager');
 
 
 
