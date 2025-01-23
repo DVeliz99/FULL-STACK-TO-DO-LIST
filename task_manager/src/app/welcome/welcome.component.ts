@@ -3,6 +3,7 @@ import { FormTaskManagerComponent } from '../form-task-manager/form-task-manager
 import { Subscription } from 'rxjs';
 import { DataLoginService } from '../../services/user_data_service/data_login.service';
 
+
 @Component({
   selector: 'app-welcome',
   imports: [FormTaskManagerComponent],
@@ -13,7 +14,7 @@ export class WelcomeComponent implements OnInit {
   username!:string;
   userLoggedInDataSubscription!:Subscription;
 
-  constructor(private userDataLoginservice:DataLoginService){}
+  constructor(private userDataLoginservice:DataLoginService,){}
 
   ngOnInit(): void {
     //    // Suscripción al servicio para recibir los datos del perfil

@@ -1,4 +1,4 @@
-button{
+button {
     border-radius: 10px;
     background-color: white;
     width: 25%;
@@ -6,11 +6,29 @@ button{
 
 }
 
+.modal {
+    height: 500px;
+}
+
+.cdk-global-overlay-wrapper {
+   top:0;
+   margin-top: 0;
+    width: 100vw;
+    max-height: 500px;
+    
+ }
+
+ .cdk-overlay-container{
+    height: 150px;
+ }
+
+
+
 
 /*Hover effects*/
 
-button:hover{
+button:hover {
     background-color: rgb(238, 245, 245);
-    border:2px solid #155E95;
+    border: 2px solid #155E95;
 
 }

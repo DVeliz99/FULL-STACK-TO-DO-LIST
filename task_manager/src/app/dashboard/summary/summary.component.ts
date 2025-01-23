@@ -70,9 +70,9 @@ export class SummaryComponent implements OnInit, AfterViewInit {
       }
     });
 
-  // Suscripción al servicio para recibir los datos del avatar
-    this.currentUserLoggedInAvatar.currentUserLoggedInAvatar.subscribe(response=>{
-      this.avatarUrl=this.getAvatarPath(response);
+    // Suscripción al servicio para recibir los datos del avatar
+    this.currentUserLoggedInAvatar.currentUserLoggedInAvatar.subscribe(response => {
+      this.avatarUrl = this.getAvatarPath(response);
       // console.log('Avatar obtenido en summary component desde DataLoginService', this.avatarUrl);  
     })
 
@@ -148,7 +148,7 @@ export class SummaryComponent implements OnInit, AfterViewInit {
               this.profileDataService.changeProfileAvatar(this.avatar);
               this.avatarUrl = this.newAvatarUrl;
               // console.log('Nuevo valor de avatarUrl',this.avatarUrl);
-              
+
               this.showalert('success', 'Éxito', 'Imagen actualizada exitosamente');
             } else {
               this.showalert('Error', 'Error', 'Error al actualizar la imagen');
@@ -183,12 +183,25 @@ export class SummaryComponent implements OnInit, AfterViewInit {
     //Cuando la vista se cargue, iniciar el tooltip
     const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]')) as HTMLElement[];
     tooltipTriggerList.forEach((tooltipTriggerEl) => {
-        tooltipTriggerEl.addEventListener('mouseenter', () => { const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTriggerEl) || new bootstrap.Tooltip(tooltipTriggerEl); tooltipInstance.show(); }); tooltipTriggerEl.addEventListener('mouseleave', () => {
-            const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTriggerEl); if (tooltipInstance) {
-                tooltipInstance.dispose();
-            }
-        });
+      tooltipTriggerEl.addEventListener('mouseenter', () => {
+        const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTriggerEl) || new bootstrap.Tooltip(tooltipTriggerEl);
+        tooltipInstance.show();
+      }); tooltipTriggerEl.addEventListener('mouseleave', () => {
+        const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+        if (tooltipInstance) {
+          tooltipInstance.dispose();
+        }
+      });
+
+      //  Se destruye cuando se le da click al elemento
+      tooltipTriggerEl.addEventListener('click', () => {
+        const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+        if (tooltipInstance) {
+          tooltipInstance.dispose();
+        }
+      });
+
     });
-}
+  }
 
 }
