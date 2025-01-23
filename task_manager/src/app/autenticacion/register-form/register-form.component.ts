@@ -67,7 +67,7 @@ export class RegisterFormComponent {
 
     if (file) {
       // Validar que el archivo sea una imagen y tenga la extensión correcta
-      console.log(file);
+      // console.log(file);
       const validTypes = ['image/jpeg', 'image/png', 'image/gif']; // Tipos MIME permitidos
       if (!validTypes.includes(file.type)) {
         this.imageErrorMessage = 'Por favor, selecciona un archivo de imagen válido (JPG, JPEG, PNG, GIF).';
@@ -102,7 +102,7 @@ export class RegisterFormComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value);  // Procesar los datos del formulario si es válido
+      // console.log(this.registerForm.value);  // Procesar los datos del formulario si es válido
 
       // Preparar el FormData
       const formDataToSend = this.prepareFormData();
@@ -114,7 +114,7 @@ export class RegisterFormComponent {
       })
         .subscribe({
           next: (event: any) => {
-            console.log('Evento HTTP:', event); // Muestra todo el evento, incluyendo progreso
+            // console.log('Evento HTTP:', event); // Muestra todo el evento, incluyendo progreso
             if (event.type === HttpEventType.Response) {
               // console.log('Respuesta completa:', event.body);
 

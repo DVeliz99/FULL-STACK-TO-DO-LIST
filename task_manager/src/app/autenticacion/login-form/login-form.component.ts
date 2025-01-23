@@ -58,7 +58,7 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log("Formulario enviado:", this.loginForm.value); // Crear una instancia de FormData y agregar los campos del formulario
+      // console.log("Formulario enviado:", this.loginForm.value); // Crear una instancia de FormData y agregar los campos del formulario
       // Obtener los valores del formulario
       const formData = {
         user_name: this.loginForm.value.user_name,
@@ -70,7 +70,7 @@ export class LoginFormComponent implements OnInit {
       // Llamar al servicio de autenticación
       this.authService.login(formData).subscribe(
         response => {
-          console.log(response); // Para depuración: ver la respuesta completa en la consola
+          // console.log(response); // Para depuración: ver la respuesta completa en la consola
           if (response.status === 'success') {
             if (response.user && response.user.user_id && response.user.user_name) {
 
@@ -83,9 +83,9 @@ export class LoginFormComponent implements OnInit {
 
               const avatar = response.user.avatar;
               if (avatar) {
-                console.log('Avatar del usuario:', avatar);
+                // console.log('Avatar del usuario:', avatar);
               } else {
-                console.error('Falta la propiedad avatar.');
+                // console.error('Falta la propiedad avatar.');
               }
 
               this.router.navigate(['/']);  // Redirigir a welcome
